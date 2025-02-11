@@ -114,7 +114,7 @@ export const RoomsForm = () => {
           lineHeight: "33.6px",
         }}
       >
-        Welcome to Booksy 🏤
+        Welcome to Book Chair 🏤
       </Typography>
       <Typography
         sx={{
