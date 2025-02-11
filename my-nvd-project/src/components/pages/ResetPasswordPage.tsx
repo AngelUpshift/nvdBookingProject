@@ -1,6 +1,7 @@
 import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
 // import { ResetPasswordImages } from "../components/ResetPassword/ResetPasswordImages";
 import { ResetPasswordForm } from "../components/ResetPassword/ResetPasswordForm";
+import { ResetPasswordImages } from "../components/ResetPassword/ResetPasswordImages";
 
 export const ResetPasswordPage = () => {
   const theme = useTheme();
@@ -32,7 +33,7 @@ export const ResetPasswordPage = () => {
           overflow: "hidden", // Prevent overflow
         }}
       >
-        {/* <ResetPasswordImages /> */}
+        <ResetPasswordImages />
         <ResetPasswordForm />
       </Box>
     </Container>

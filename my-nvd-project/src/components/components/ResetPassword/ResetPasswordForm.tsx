@@ -47,7 +47,7 @@ export const ResetPasswordForm = () => {
           md: "100%",
           lg: "100%",
         },
-        marginTop: "116px",
+        marginTop: "16px",
         left: "32px",
         gap: "50px",
         padding: theme.spacing(2),
