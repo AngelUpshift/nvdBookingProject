@@ -71,6 +71,7 @@ export const MyProfilePage = () => {
 
   return (
     <Container
+      maxWidth="xl" // Changed from defwidthault to xl for more
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -94,18 +95,7 @@ export const MyProfilePage = () => {
           }}
           onClick={handleClickOpen}
         />
-        <Dialog
-          open={open}
-          onClose={handleClickClose}
-          fullWidth
-          PaperProps={{
-            sx: {
-              borderRadius: "20px",
-              width: "369px",
-              height: "164px",
-            },
-          }}
-        >
+        <Dialog open={open} onClose={handleClickClose} fullWidth>
           <CloseIcon
             sx={{
               width: 20,

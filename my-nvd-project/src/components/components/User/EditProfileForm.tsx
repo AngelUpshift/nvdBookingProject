@@ -143,9 +143,9 @@ export const EditProfileForm = () => {
     <Box
       sx={{
         width: "100%",
-        height: isMobile ? "70vh" : isTablet ? "90vh" : "70vh", // Adjust height based on screen size
-        maxHeight: "100%",
         overflowY: "auto",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Box
@@ -155,7 +155,7 @@ export const EditProfileForm = () => {
           alignItems: "center",
           gap: theme.spacing(2),
           width: "100%",
-          height: isMobile ? "70vh" : isTablet ? "80vh" : "70vh", // Adjust height based on screen size
+          height: "70vh", // Adjust height based on screen size
         }}
       >
         <Box
@@ -164,7 +164,6 @@ export const EditProfileForm = () => {
             flexDirection: "column",
             alignItems: "center",
             width: "100%",
-            height: isMobile ? "226px" : isTablet ? "229px" : "70vh",
             gap: "4px",
           }}
         >
@@ -172,7 +171,7 @@ export const EditProfileForm = () => {
             component="img"
             src={formikProfile.values.avatar_url || user.avatar_url}
             sx={{
-              width: isMobile ? "154px" : "154px",
+              width: "154px",
               height: isMobile ? "229px" : isTablet ? "229px" : "265px",
               objectFit: "cover",
             }}
@@ -205,11 +204,12 @@ export const EditProfileForm = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            width: "100%",
-            gap: "4px",
+            width: isMobile ? "100%" : "800px",
+            gap: "15px",
           }}
         >
           <ButtonSave onClick={handleSave} />
+
           <Typography
             fontStyle="Roboto"
             fontWeight="700"
@@ -222,7 +222,6 @@ export const EditProfileForm = () => {
           <TextField
             id="first_name"
             label="First Name"
-            fullWidth
             variant="outlined"
             InputLabelProps={{
               style: {
@@ -370,6 +369,7 @@ export const EditProfileForm = () => {
               formikProfile.touched.email && Boolean(formikProfile.errors.email)
             }
           />
+
           <FormControl
             sx={{
               height: "42px",
@@ -404,6 +404,7 @@ export const EditProfileForm = () => {
               onChange={formikProfile.handleChange}
               onBlur={formikProfile.handleBlur}
               variant="outlined"
+              fullWidth
               displayEmpty
               sx={{
                 height: "42px",
@@ -429,22 +430,7 @@ export const EditProfileForm = () => {
               }}
               renderValue={(selected) => {
                 if (selected === "") {
-                  return (
-                    <Typography
-                      sx={{
-                        height: "20px",
-                        top: "11px",
-                        left: "12px",
-                        fontStyle: "Roboto",
-                        fontSize: "14px",
-                        fontWeight: "400",
-                        lineHeight: "19.6px",
-                        color: "#686868",
-                      }}
-                    >
-                      Select Team
-                    </Typography>
-                  );
+                  return <Typography>Select Team</Typography>;
                 }
                 return selected === "BND"
                   ? "Backend Team"

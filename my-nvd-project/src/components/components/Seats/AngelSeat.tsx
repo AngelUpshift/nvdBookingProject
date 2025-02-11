@@ -8,31 +8,20 @@ export const AngelSeat = () => {
         display: "flex",
         flexDirection: "row",
         width: "100%",
-        // maxWidth: 361,
         height: 71,
       }}
     >
-      {/* <Box
-        sx={{
-          width: 73,
-          height: 47,
-          borderRadius: "4px 0px 0px 0px",
-        }}
-      > */}
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          // height: 18,
-          // borderRadius: 4,
-          // padding: "4px, 6px, 4px, 6px",
+          marginRight: 34,
         }}
       >
         <Typography fontStyle="Roboto" fontSize="16px" fontWeight="400">
           💺 Seat 1
         </Typography>
-
         <Typography
           color="#B71C1C"
           fontStyle="Roboto"
@@ -41,9 +30,9 @@ export const AngelSeat = () => {
           lineHeight="19.6px"
         >
           Angel's Seats
-        </Typography>
-        <SmallAndCoolButtons />
-      </Box>
+        </Typography>{" "}
+      </Box>{" "}
+      <SmallAndCoolButtons />
     </Box>
   );
 };

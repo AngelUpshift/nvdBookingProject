@@ -92,7 +92,6 @@ export const RoomsForm = () => {
   }, [booking.bookingList, room.roomList, d]);
 
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
   return (
     <Box
@@ -100,21 +99,14 @@ export const RoomsForm = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        maxWidth: isMobile || isTablet ? "361px" : "800px", // Adjust maxWidth based on screen size
         width: "100%",
         padding: theme.spacing(2),
-        backgroundColor: "white",
         gap: theme.spacing(1.5),
-        height: "100%", // Allow height to adjust based on content
-
-        overflow: "auto", // Enable scrolling if content exceeds maxHeight
       }}
     >
       <Typography
         sx={{
           width: "100%",
-          maxWidth: 361,
-          pl: 0,
           textAlign: isMobile ? "left" : "center",
           fontStyle: "Roboto",
           fontWeight: "700",
@@ -127,8 +119,6 @@ export const RoomsForm = () => {
       <Typography
         sx={{
           width: "100%",
-          maxWidth: 361,
-          pl: 0,
           fontStyle: "Roboto",
           fontWeight: "500",
           lineHeight: "25.2px",
@@ -155,9 +145,7 @@ export const RoomsForm = () => {
       <WeatherWidget />
       <Box
         sx={{
-          maxWidth: isMobile || isTablet ? "361px" : "800px", // Adjust maxWidth based on screen size
-          width: "100%",
-          height: "auto", // Allow height to adjust based on content
+          width: isMobile ? "100%" : "800px",
           left: "16px",
           gap: "12px",
           display: "flex",
@@ -176,7 +164,6 @@ export const RoomsForm = () => {
             >
               <Card
                 sx={{
-                  maxWidth: isMobile || isTablet ? "361px" : "800px", // Adjust maxWidth based on screen size
                   width: "100%",
                   height: "86px",
                   borderRadius: "20px", // Added borderRadius here
@@ -220,7 +207,6 @@ export const RoomsForm = () => {
             >
               <Card
                 sx={{
-                  maxWidth: isMobile || isTablet ? "361px" : "800px", // Adjust maxWidth based on screen size
                   width: "100%",
                   height: "86px",
                   borderRadius: "20px", // Added borderRadius here
@@ -263,7 +249,6 @@ export const RoomsForm = () => {
             >
               <Card
                 sx={{
-                  maxWidth: isMobile || isTablet ? "361px" : "800px", // Adjust maxWidth based on screen size
                   width: "100%",
                   height: "86px",
                   borderRadius: "20px", // Added borderRadius here

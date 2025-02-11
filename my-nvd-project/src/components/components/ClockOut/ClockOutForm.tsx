@@ -5,7 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-// import logo from "../../../img/alarm-clocks.jpg";
+import logo from "../../../img/alarm-clocks.svg";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { clockOutThunk } from "../../redux/slices/attendanceSlice";
 import { useEffect } from "react";
@@ -109,7 +109,7 @@ export const ClockOutForm = () => {
       </Box>
       <Box
         component="img"
-        // src={logo}
+        src={logo}
         sx={{
           width: "100%",
           maxWidth: "232px",
