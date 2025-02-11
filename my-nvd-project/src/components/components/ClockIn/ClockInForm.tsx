@@ -5,7 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-// import logo from "../../../img/watch.jpg";
+import logo from "../../../img/watch.svg";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { useEffect } from "react";
 import { clockInThunk } from "../../redux/slices/attendanceSlice";
@@ -111,7 +111,7 @@ export const ClockInForm = () => {
       </Box>
       <Box
         component="img"
-        // src={logo}
+        src={logo}
         sx={{
           width: "100%",
           maxWidth: "152px",

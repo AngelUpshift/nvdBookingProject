@@ -19,7 +19,6 @@ export const SmallRoomForm = () => {
         alignItems: "center",
         position: "absolute",
         top: isMobile ? "200px" : "256px",
-        backgroundColor: "white",
         gap: "10px",
       }}
     >
@@ -29,9 +28,7 @@ export const SmallRoomForm = () => {
           flexDirection: "column",
           alignItems: "center",
           position: "absolute",
-          left: 16,
           width: "100%",
-          maxWidth: 361,
           gap: "10px",
         }}
       >

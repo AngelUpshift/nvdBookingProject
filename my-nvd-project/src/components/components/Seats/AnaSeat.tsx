@@ -27,9 +27,7 @@ export const AnaSeat = () => {
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          // height: 18,
-          // borderRadius: 4,
-          // padding: "4px, 6px, 4px, 6px",
+          marginRight: 35,
         }}
       >
         <Typography fontStyle="Roboto" fontSize="16px" fontWeight="400">
