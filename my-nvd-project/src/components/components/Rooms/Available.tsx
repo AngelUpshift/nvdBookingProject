@@ -10,7 +10,7 @@ interface SeatProps {
   roomId: string;
 }
 
-export const Available = ({ deskId, roomId }: SeatProps) => {
+export const Available = ({ deskId }: SeatProps) => {
   const dispatch = useAppDispatch();
   const booking = useAppSelector((state) => state.booking);
 

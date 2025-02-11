@@ -4,23 +4,18 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { Toaster } from "react-hot-toast";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "./components/pages/HomePage";
-// import { RegisterPage } from "./components/pages/RegisterPage";
-// import { ForgotPasswordPage } from "./components/pages/ForgotPasswordPage";
-// import { ResetPasswordPage } from "./components/pages/ResetPasswordPage";
-// import { RoomsPage } from "./components/pages/RoomsPage";
 import { ProtectedRoute } from "./components/routes/ProtectedRoute";
 import { RegisterPage } from "./components/pages/RegisterPage";
 import { ForgotPasswordPage } from "./components/pages/ForgotPasswordPage";
 import { ResetPasswordPage } from "./components/pages/ResetPasswordPage";
 import { RoomsPage } from "./components/pages/RoomsPage";
 import { MainRoomPage } from "./components/pages/roomsPages/MainRoomPage";
-// import { ClockInPage } from "./components/pages/ClockInPage";
-// import { MyProfilePage } from "./components/pages/MyProfilePage";
-// import { MainRoomPage } from "./components/pages/roomsPages/MainRoomPage";
-// import { SmallRoomPage } from "./components/pages/roomsPages/SmallRoomPage";
-// import { CoolRoomPage } from "./components/pages/roomsPages/CoolRoomPage";
-// import { EditProfilePage } from "./components/pages/EditProfilePage";
-// import { ClockOutPage } from "./components/pages/ClockOutPage";
+import { SmallRoomPage } from "./components/pages/roomsPages/SmallRoomPage";
+import { CoolRoomPage } from "./components/pages/roomsPages/CoolRoomPage";
+import { ClockInPage } from "./components/pages/ClockInPage";
+import { ClockOutPage } from "./components/pages/ClockOutPage";
+import { MyProfilePage } from "./components/pages/MyProfilePage";
+import { EditProfilePage } from "./components/pages/EditProfilePage";
 
 const App = () => {
   const theme = createTheme({
@@ -60,7 +55,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        {/* <Route
+        <Route
           path="room/small-reserve-desk"
           element={
             <ProtectedRoute>
@@ -107,7 +102,7 @@ const App = () => {
               <EditProfilePage />
             </ProtectedRoute>
           }
-        /> */}
+        />
         {/* <Route path="*" element={<Navigate to="room" />} /> */}
       </Routes>
     </ThemeProvider>
