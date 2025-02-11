@@ -103,7 +103,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        {/* <Route path="*" element={<Navigate to="room" />} /> */}
+        <Route path="*" element={<Navigate to="room" />} />
       </Routes>
     </ThemeProvider>
   );

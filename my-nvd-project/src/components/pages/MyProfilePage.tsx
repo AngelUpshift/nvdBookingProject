@@ -23,11 +23,14 @@ import { useAppDispatch, useAppSelector } from "../redux/store";
 import { logoutThunk, meThunk } from "../redux/slices/authSlice";
 import MediaQuery from "react-responsive";
 import { NavigationBarDesktop } from "../components/NavigationBar/NavigationBarDesktop";
+import { getBookingThunk } from "../redux/slices/bookingSlice";
+import { IBooking } from "../../types/booking/booking";
 
 export const MyProfilePage = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.auth);
+  const booking = useAppSelector((state) => state.booking);
 
   const theme = useTheme();
 
@@ -36,10 +39,10 @@ export const MyProfilePage = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
 
   const isMobileHeight = useMediaQuery("(max-height: 750px)");
-  const isTallScreen = useMediaQuery("(min-height: 751px)");
 
   useEffect(() => {
     dispatch(meThunk());
+    dispatch(getBookingThunk({ order: "asc" }));
   }, [dispatch]);
 
   const handleClickOpen = () => {
@@ -53,6 +56,18 @@ export const MyProfilePage = () => {
   const logoutLogic = () => {
     dispatch(logoutThunk());
   };
+
+  const filteredBookingsOfTheUser: IBooking[] = booking.bookingList.filter(
+    (value) => value.user._id === user._id
+  );
+  const filteredBookingsOfTheUserNotCancelled: IBooking[] =
+    booking.bookingList.filter(
+      (value) => value.user._id === user._id && value.status === "booked"
+    );
+  const filteredBookingsOfTheUserCancelled: IBooking[] =
+    booking.bookingList.filter(
+      (value) => value.user._id === user._id && value.status === "cancelled"
+    );
 
   return (
     <Container
@@ -364,7 +379,7 @@ export const MyProfilePage = () => {
               component="div"
               color="#000000"
             >
-              Info1
+              Total bookings
             </Typography>
             <Typography
               sx={{
@@ -374,7 +389,7 @@ export const MyProfilePage = () => {
               }}
               component="div"
             >
-              Informacion and data for this cell
+              {filteredBookingsOfTheUser.length}
             </Typography>
           </CardContent>
         </Card>
@@ -399,7 +414,7 @@ export const MyProfilePage = () => {
               component="div"
               color="#000000"
             >
-              Info2
+              Not cancelled bookings
             </Typography>
             <Typography
               sx={{
@@ -409,7 +424,7 @@ export const MyProfilePage = () => {
               }}
               component="div"
             >
-              Informacion and data for this cell
+              {filteredBookingsOfTheUserNotCancelled.length}
             </Typography>
           </CardContent>
         </Card>
@@ -434,7 +449,7 @@ export const MyProfilePage = () => {
               component="div"
               color="#000000"
             >
-              Info3
+              Cancelled bookings
             </Typography>
             <Typography
               sx={{
@@ -444,7 +459,7 @@ export const MyProfilePage = () => {
               }}
               component="div"
             >
-              Informacion and data for this cell
+              {filteredBookingsOfTheUserCancelled.length}
             </Typography>
           </CardContent>
         </Card>
