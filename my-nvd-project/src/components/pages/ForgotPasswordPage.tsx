@@ -1,5 +1,6 @@
 import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
 import { ForgotPasswordForm } from "../components/ForgotPassword/ForgotPasswordForm";
+import { ForgotPasswordImages } from "../components/ForgotPassword/ForgotPasswordImages";
 
 export const ForgotPasswordPage = () => {
   const theme = useTheme();
@@ -14,7 +15,6 @@ export const ForgotPasswordPage = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "100vh",
         padding: theme.spacing(2),
       }}
     >
@@ -28,10 +28,9 @@ export const ForgotPasswordPage = () => {
           padding: theme.spacing(2),
           borderRadius: 2,
           backgroundColor: "white",
-          overflow: "hidden", // Prevent overflow
         }}
       >
-        {/* <ForgotPasswordImages /> */}
+        <ForgotPasswordImages />
         <ForgotPasswordForm />
       </Box>
     </Container>

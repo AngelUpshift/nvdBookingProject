@@ -25,6 +25,7 @@ import MediaQuery from "react-responsive";
 import { NavigationBarDesktop } from "../components/NavigationBar/NavigationBarDesktop";
 import { getBookingThunk } from "../redux/slices/bookingSlice";
 import { IBooking } from "../../types/booking/booking";
+import icon from "../../img/Default-avatar 1.png";
 
 export const MyProfilePage = () => {
   const [open, setOpen] = useState(false);
@@ -71,7 +72,6 @@ export const MyProfilePage = () => {
 
   return (
     <Container
-      maxWidth="xl" // Changed from defwidthault to xl for more
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -95,7 +95,18 @@ export const MyProfilePage = () => {
           }}
           onClick={handleClickOpen}
         />
-        <Dialog open={open} onClose={handleClickClose} fullWidth>
+        <Dialog
+          open={open}
+          onClose={handleClickClose}
+          fullWidth
+          PaperProps={{
+            sx: {
+              borderRadius: "20px",
+              width: "369px",
+              height: "164px",
+            },
+          }}
+        >
           <CloseIcon
             sx={{
               width: 20,
@@ -216,10 +227,10 @@ export const MyProfilePage = () => {
         >
           <Box
             component="img"
-            src={user.avatar_url !== "" ? user.avatar_url : ""}
+            src={user.avatar_url !== "" ? user.avatar_url : icon}
             sx={{
               width: 154,
-              height: 229,
+              height: 154,
               mr: 2,
               borderRadius: 2,
             }}

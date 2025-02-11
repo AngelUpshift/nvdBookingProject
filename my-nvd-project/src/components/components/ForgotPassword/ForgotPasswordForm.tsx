@@ -43,7 +43,7 @@ export const ForgotPasswordForm = () => {
           md: "100%",
           lg: "100%",
         },
-        marginTop: "116px",
+        marginTop: "16px",
         boxSizing: "border-box",
         left: "32px",
         gap: "50px",

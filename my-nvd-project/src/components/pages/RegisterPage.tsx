@@ -1,6 +1,7 @@
 import { Box, Container, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { RegisterForm } from "../components/Register/RegisterForm";
+import { RegisterImages } from "../components/Register/RegisterImages";
 // import { RegisterImages } from "../components/Register/RegisterImages";
 
 export const RegisterPage = () => {
@@ -16,7 +17,6 @@ export const RegisterPage = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "100vh",
         padding: theme.spacing(2),
       }}
     >
@@ -30,10 +30,9 @@ export const RegisterPage = () => {
           padding: theme.spacing(2),
           borderRadius: 2,
           backgroundColor: "white",
-          overflow: "hidden", // Prevent overflow
         }}
       >
-        {/* <RegisterImages /> */}
+        <RegisterImages />
         <RegisterForm />
       </Box>
     </Container>

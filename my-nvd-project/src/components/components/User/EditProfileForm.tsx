@@ -26,7 +26,7 @@ import { ButtonSave } from "../ButtonBack/ButtonSave";
 import { changePasswordThunk, meThunk } from "../../redux/slices/authSlice";
 import { useEffect, useRef, useState } from "react";
 import VideoCameraBackOutlinedIcon from "@mui/icons-material/VideoCameraBackOutlined";
-// import logo from "../../../img/defaultProfileImage.jpg";
+import logo from "../../../img/Default-avatar 1.png";
 
 export const EditProfileForm = () => {
   const dispatch = useAppDispatch();
@@ -169,9 +169,15 @@ export const EditProfileForm = () => {
         >
           <Box
             component="img"
-            src={formikProfile.values.avatar_url || user.avatar_url}
+            src={
+              formikProfile.values.avatar_url
+                ? formikProfile.values.avatar_url
+                : user.avatar_url
+                ? user.avatar_url
+                : logo
+            }
             sx={{
-              width: "154px",
+              width: isMobile ? "154px" : "229px",
               height: isMobile ? "229px" : isTablet ? "229px" : "265px",
               objectFit: "cover",
             }}

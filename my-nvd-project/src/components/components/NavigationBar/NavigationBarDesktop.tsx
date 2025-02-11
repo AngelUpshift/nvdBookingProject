@@ -14,7 +14,7 @@ import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { Link, useLocation, useParams } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
-// import logo from "../../../img/navbarimg/Booksy-logos-blue.psd (1).jpg";
+import logo from "../../../img/image 1 (1).svg";
 
 export interface INavigation {
   handleClickOpen: () => void;
@@ -50,13 +50,12 @@ export const NavigationBarDesktop = ({
     >
       <Box
         component="img"
-        // src={logo}
+        src={logo}
         sx={{
           width: "100%",
           maxWidth: "81px",
           position: "absolute",
           display: "flex",
-          top: 25,
           left: 30,
         }}
       />

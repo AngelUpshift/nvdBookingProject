@@ -1,4 +1,4 @@
-import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Container, useTheme } from "@mui/material";
 import { RoomsForm } from "../components/Rooms/RoomsForm";
 import { NavigationBar } from "../components/NavigationBar/NavigationBar";
 import MediaQuery from "react-responsive";
@@ -6,8 +6,6 @@ import { NavigationBarDesktopNoLogout } from "../components/NavigationBar/Naviga
 
 export const RoomsPage = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
   return (
     <>

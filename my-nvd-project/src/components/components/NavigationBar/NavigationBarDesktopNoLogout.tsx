@@ -3,7 +3,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { Link, useLocation, useParams } from "react-router-dom";
-// import logo from "../../../img/navbarimg/Booksy-logos-blue.psd (1).jpg";
+import logo from "../../../img/image 1 (1).svg";
 
 export const NavigationBarDesktopNoLogout = () => {
   const location = useLocation();
@@ -26,7 +26,7 @@ export const NavigationBarDesktopNoLogout = () => {
         boxShadow: "0 -2px 5px rgba(0, 0, 0, 0.1)",
       }}
     >
-      {/* <Box
+      <Box
         component="img"
         src={logo}
         sx={{
@@ -34,10 +34,9 @@ export const NavigationBarDesktopNoLogout = () => {
           maxWidth: "81px",
           position: "absolute",
           display: "flex",
-          top: 25,
           left: 30,
         }}
-      /> */}
+      />
       <Link to="/room" style={{ textDecoration: "none", flex: 0.07 }}>
         <Box
           sx={{

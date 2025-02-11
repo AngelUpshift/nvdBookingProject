@@ -72,7 +72,7 @@ export const LoginForm = () => {
           lg: "44.8px",
         }}
       >
-        Welcome to Upshift Booksy
+        Welcome to Book Chair
       </Typography>
       <Typography
         fontSize={{
