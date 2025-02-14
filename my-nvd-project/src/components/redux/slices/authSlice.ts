@@ -9,7 +9,7 @@ import axiosInstance from "../../../utils/axiosInstance";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-const initialState: IUser = {
+const initialState: IUser & { loading: boolean } = {
   _id: "",
   first_name: "",
   last_name: "",
@@ -19,6 +19,7 @@ const initialState: IUser = {
   password: "",
   role: "" as userRole,
   avatar_url: "",
+  loading: false,
 };
 
 export const registerThunk = createAsyncThunk(
@@ -207,9 +208,16 @@ export const authSlice = createSlice({
     builder.addCase(registerThunk.fulfilled, (state, action) => {
       state = action.payload;
     });
+    builder.addCase(loginThunk.pending, (state) => {
+      state.loading = false;
+    });
     builder.addCase(loginThunk.fulfilled, (state, action) => {
       state.email = action.payload.email;
       state.password = action.payload.password;
+      state.loading = true;
+    });
+    builder.addCase(loginThunk.rejected, (state) => {
+      state.loading = false;
     });
     builder.addCase(logoutThunk.fulfilled, (state) => {
       state.first_name = "";

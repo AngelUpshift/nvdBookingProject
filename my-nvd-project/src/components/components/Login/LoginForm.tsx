@@ -5,19 +5,22 @@ import {
   Link,
   Button,
   useMediaQuery,
+  CircularProgress,
 } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useFormik } from "formik";
 import { validationSchemaLogin } from "./utils";
-import { useAppDispatch } from "../../redux/store";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { loginThunk } from "../../redux/slices/authSlice";
 import { useTheme } from "@mui/material/styles";
 
 export const LoginForm = () => {
   const theme = useTheme();
   const dispatch = useAppDispatch();
+  const loading = useAppSelector((state) => state.auth.loading);
+  console.log("loading", loading);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -52,8 +55,22 @@ export const LoginForm = () => {
         boxSizing: "border-box",
         maxWidth: "500px", // Set a maxWidth for the container
         margin: "0 auto", // Center the container
+        pointerEvents: loading ? "none" : "auto",
+        opacity: loading ? 0.5 : 1,
       }}
     >
+      {loading && (
+        <CircularProgress
+          size={24}
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            marginTop: "-12px",
+            marginLeft: "-12px",
+          }}
+        />
+      )}
       <Typography
         fontSize={{
           xs: "20px",
@@ -113,6 +130,7 @@ export const LoginForm = () => {
         }}
       >
         <TextField
+          disabled={loading}
           id="email"
           type="email"
           placeholder="Your Email"
@@ -153,6 +171,7 @@ export const LoginForm = () => {
           // helperText={formik.touched.email && formik.errors.email}
         />
         <TextField
+          disabled={loading}
           id="password"
           type="password"
           placeholder="Your Password"
